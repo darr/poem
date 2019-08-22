@@ -1,0 +1,86 @@
+
+              <!DOCTYPE HTML>
+               <html>
+                   <head>
+                       <meta charset="utf-8"><link rel="icon" href="https://static.jianshukeji.com/highcharts/images/favicon.ico">
+                       <meta name="viewport" content="width=device-width, initial-scale=1">
+                       <script src="https://img.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+                       <script src="https://img.hcharts.cn/highmaps/highmaps.js"></script>
+                       <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.6/proj4.js"></script>
+                   </head>
+                   <body>
+                       <div id="container" style=" height: 1000px"></div>
+                       <script src="https://data.jianshukeji.com/geochina/china.js"></script>
+                       <script>
+                           var data = [
+                                   {name:'南京市', lat:32.05838, lon:118.79647},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'灵州', lat:38.095451, lon:106.339817},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'南昌市', lat:28.6870805, lon:115.853554},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'李煜', lat:36.689115, lon:117.648991},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'泉州市', lat:24.87650039, lon:118.6716272},
+{name:'常州市', lat:31.81175003, lon:119.970599},
+{name:'汴阳', lat:33.677669, lon:116.963893},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'南京市', lat:32.0604118, lon:118.7911366},
+{name:'汴京', lat:34.79481, lon:114.37115},
+{name:'洛阳市', lat:34.6190627, lon:112.4471901},
+{name:'芜湖市', lat:31.35397852, lon:118.4278122},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'镇江市', lat:32.18959, lon:119.425},
+{name:'武汉市', lat:30.59276, lon:114.30525},
+{name:'南昌市', lat:28.68202, lon:115.85794},
+{name:'池州市', lat:30.66703331, lon:117.4861513},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'权知州', lat:31.34108, lon:120.615495},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'null', lat:4098769.14, lon:11628630.04},
+
+                                   ];
+
+                           var map = new Highcharts.Map('container', {
+                               title: {
+                                   text: '李煜足迹地图'
+                               },
+                               mapNavigation: {
+                                   enabled: true,
+                                   buttonOptions: {
+                                       verticalAlign: 'bottom'
+                                   }
+                               },
+                               tooltip: {
+                                   useHTML: true,
+                                   formatter: function() {
+                                       return this.point.name;
+                                   }
+                               },
+                               plotOptions: {
+                                   series: {
+                                       dataLabels: {
+                                           enabled: true
+                                       },
+                                       marker: {
+                                           radius: 3
+                                       }
+                                   }
+                               },
+                               series: [{
+                                   // 空数据列，用于展示底图
+                                   mapData: Highcharts.maps['cn/china'],
+                                   showInLegend: false
+                               },{
+                                   type: 'mappoint',
+                                   name: '李煜足迹地图',
+                                   data: data
+                               }]
+                           });
+                       <!--});-->
+                       </script>
+                   </body>
+               </html>
+               

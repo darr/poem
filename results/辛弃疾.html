@@ -1,0 +1,84 @@
+
+              <!DOCTYPE HTML>
+               <html>
+                   <head>
+                       <meta charset="utf-8"><link rel="icon" href="https://static.jianshukeji.com/highcharts/images/favicon.ico">
+                       <meta name="viewport" content="width=device-width, initial-scale=1">
+                       <script src="https://img.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+                       <script src="https://img.hcharts.cn/highmaps/highmaps.js"></script>
+                       <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.6/proj4.js"></script>
+                   </head>
+                   <body>
+                       <div id="container" style=" height: 1000px"></div>
+                       <script src="https://data.jianshukeji.com/geochina/china.js"></script>
+                       <script>
+                           var data = [
+                                   {name:'镇江市', lat:32.19045782, lon:119.4189564},
+{name:'江西省', lat:28.67417, lon:115.91004},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'济南市', lat:36.64981579, lon:117.1140788},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'绍兴市', lat:30.03279508, lon:120.5754159},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'建康', lat:32.02305, lon:118.7923},
+{name:'绍兴府', lat:30.0096, lon:120.57047},
+{name:'湖南省', lat:28.112660, lon:112.983400},
+{name:'杭州市', lat:30.274150, lon:120.155150},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'浙东安', lat:31.745895, lon:116.496669},
+{name:'湖北省', lat:30.545390, lon:114.342340},
+{name:'永康市', lat:28.888510, lon:120.047310},
+{name:'南昌市', lat:28.682020, lon:115.857940},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'带湖', lat:28.46646, lon:117.9629},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'福建省', lat:26.099820, lon:119.296590},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'上饶市', lat:28.45775634, lon:117.9384305},
+
+                                   ];
+
+                           var map = new Highcharts.Map('container', {
+                               title: {
+                                   text: '辛弃疾足迹地图'
+                               },
+                               mapNavigation: {
+                                   enabled: true,
+                                   buttonOptions: {
+                                       verticalAlign: 'bottom'
+                                   }
+                               },
+                               tooltip: {
+                                   useHTML: true,
+                                   formatter: function() {
+                                       return this.point.name;
+                                   }
+                               },
+                               plotOptions: {
+                                   series: {
+                                       dataLabels: {
+                                           enabled: true
+                                       },
+                                       marker: {
+                                           radius: 3
+                                       }
+                                   }
+                               },
+                               series: [{
+                                   // 空数据列，用于展示底图
+                                   mapData: Highcharts.maps['cn/china'],
+                                   showInLegend: false
+                               },{
+                                   type: 'mappoint',
+                                   name: '辛弃疾足迹地图',
+                                   data: data
+                               }]
+                           });
+                       <!--});-->
+                       </script>
+                   </body>
+               </html>
+               

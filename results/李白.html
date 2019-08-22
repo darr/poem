@@ -1,0 +1,136 @@
+
+              <!DOCTYPE HTML>
+               <html>
+                   <head>
+                       <meta charset="utf-8"><link rel="icon" href="https://static.jianshukeji.com/highcharts/images/favicon.ico">
+                       <meta name="viewport" content="width=device-width, initial-scale=1">
+                       <script src="https://img.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+                       <script src="https://img.hcharts.cn/highmaps/highmaps.js"></script>
+                       <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.6/proj4.js"></script>
+                   </head>
+                   <body>
+                       <div id="container" style=" height: 1000px"></div>
+                       <script src="https://data.jianshukeji.com/geochina/china.js"></script>
+                       <script>
+                           var data = [
+                                   {name:'null', lat:4098769.14, lon:11628630.04},
+{name:'安陆市', lat:31.255540, lon:113.689130},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'宣城市', lat:30.94287029, lon:118.7538213},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'西塞驿', lat:37.09807, lon:109.13374},
+{name:'成都市', lat:30.65227968, lon:104.0725574},
+{name:'河南省临汝县', lat:34.334476, lon:112.627853},
+{name:'桐梓县', lat:28.133210, lon:106.825020},
+{name:'南阳市', lat:32.990730, lon:112.528510},
+{name:'魏州', lat:36.35068, lon:114.95613},
+{name:'河北省', lat:38.035990, lon:114.469790},
+{name:'绵州', lat:31.46355, lon:104.74778},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'庐山', lat:29.54244, lon:115.97442},
+{name:'溧阳', lat:31.386487, lon:119.502437},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'随县', lat:31.853800, lon:113.299950},
+{name:'安陆寿山', lat:31.411997, lon:113.345734},
+{name:'扬州市', lat:32.39358, lon:119.41269},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'巴西郡', lat:34.723318, lon:113.708219},
+{name:'西安市', lat:34.34127, lon:108.93984},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'青莲乡', lat:31.19015, lon:109.23826},
+{name:'随州市', lat:31.69208833, lon:113.3764415},
+{name:'溧阳市', lat:31.415860, lon:119.484600},
+{name:'重庆市', lat:29.564710, lon:106.550730},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'开封市', lat:34.797260, lon:114.307310},
+{name:'兴庆池', lat:33.77846, lon:120.22733},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'白帝城', lat:31.04046, lon:109.57493},
+{name:'南阳市', lat:32.99263234, lon:112.5225048},
+{name:'安陆白兆山', lat:31.325507, lon:113.565543},
+{name:'商丘市', lat:34.41552227, lon:115.6506827},
+{name:'安禄山', lat:27.89311, lon:106.61572},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'武汉市', lat:30.592760, lon:114.305250},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'四川省江油县', lat:31.751217, lon:104.745494},
+{name:'四川省', lat:30.650890, lon:104.075720},
+{name:'沈丘县', lat:33.4094, lon:115.09856},
+{name:'安陆市', lat:31.25554, lon:113.68913},
+{name:'洛阳市', lat:34.6190627, lon:112.4471901},
+{name:'商丘市', lat:34.414270, lon:115.656350},
+{name:'济南市', lat:36.651840, lon:117.120090},
+{name:'天津市', lat:39.147840, lon:117.196740},
+{name:'天水市', lat:34.580850, lon:105.724860},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'紫极宫', lat:27.45846, lon:114.1726},
+{name:'开封市', lat:34.79726, lon:114.30731},
+{name:'扬州市', lat:32.393580, lon:119.412690},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'长安之北', lat:34.234095, lon:108.945078},
+{name:'德州安陵县', lat:37.359281, lon:116.536672},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'河南省登封县', lat:34.453537, lon:113.049416},
+{name:'嵊州市', lat:29.588490, lon:120.821700},
+{name:'六甲', lat:27.05192, lon:109.24554},
+{name:'山西省', lat:37.873430, lon:112.562720},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'荆州市', lat:30.33764133, lon:112.2336943},
+{name:'null', lat:4098769.14, lon:11628630.04},
+{name:'峨眉山', lat:29.568368, lon:103.349951},
+{name:'null', lat:4098769.14, lon:11628630.04},
+
+                                   ];
+
+                           var map = new Highcharts.Map('container', {
+                               title: {
+                                   text: '李白足迹地图'
+                               },
+                               mapNavigation: {
+                                   enabled: true,
+                                   buttonOptions: {
+                                       verticalAlign: 'bottom'
+                                   }
+                               },
+                               tooltip: {
+                                   useHTML: true,
+                                   formatter: function() {
+                                       return this.point.name;
+                                   }
+                               },
+                               plotOptions: {
+                                   series: {
+                                       dataLabels: {
+                                           enabled: true
+                                       },
+                                       marker: {
+                                           radius: 3
+                                       }
+                                   }
+                               },
+                               series: [{
+                                   // 空数据列，用于展示底图
+                                   mapData: Highcharts.maps['cn/china'],
+                                   showInLegend: false
+                               },{
+                                   type: 'mappoint',
+                                   name: '李白足迹地图',
+                                   data: data
+                               }]
+                           });
+                       <!--});-->
+                       </script>
+                   </body>
+               </html>
+               
